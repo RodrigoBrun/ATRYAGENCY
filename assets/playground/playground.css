@@ -1731,3 +1731,72 @@ body.pg-welcome-open {
 .pg-human-welcome.pg-is-open .pg-human-welcome__panel {
   transform: translateY(0) scale(1);
 }
+
+/* =========================================================
+   FIX PLAYGROUND OUTRO — MOBILE
+   Evita que el título se salga de la pantalla
+   ========================================================= */
+
+@media (max-width: 780px) {
+  .pg-outro {
+    overflow: hidden;
+  }
+
+  .pg-outro__layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .pg-outro__layout > div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pg-outro h2 {
+    width: 100%;
+    max-width: 100%;
+    margin: 18px 0 24px;
+
+    font-size: clamp(38px, 10.4vw, 56px);
+    line-height: .98;
+    letter-spacing: -.03em;
+
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .pg-outro h2 em {
+    display: block;
+    width: 100%;
+
+    font-size: .78em;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+
+    overflow-wrap: break-word;
+  }
+
+  .pg-outro p:not(.section-index) {
+    width: 100%;
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .pg-outro .pill-button {
+    width: 100%;
+    min-width: 0;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 390px) {
+  .pg-outro h2 {
+    font-size: clamp(35px, 9.7vw, 48px);
+  }
+
+  .pg-outro h2 em {
+    font-size: .72em;
+  }
+}
