@@ -324,8 +324,10 @@ function initializeHumanExperience() {
   });
 
   document
-    .querySelector("[data-close-human-welcome]")
-    ?.addEventListener("click", closeWelcome);
+    .querySelectorAll("[data-close-human-welcome]")
+    .forEach((element) => {
+      element.addEventListener("click", closeWelcome);
+    });
 
   document
     .querySelector("#pg-open-human-welcome")

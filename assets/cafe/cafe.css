@@ -1,0 +1,431 @@
+
+.cafe-hero {
+  position: relative;
+  min-height: 86vh;
+  padding: 190px 0 120px;
+  overflow: hidden;
+}
+
+.cafe-hero__glow {
+  position: absolute;
+  width: 70vw;
+  height: 70vw;
+  right: -24vw;
+  top: -24vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,239,255,.62), rgba(71,84,230,.32) 42%, transparent 70%);
+  filter: blur(34px);
+}
+
+.cafe-hero__layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 360px;
+  gap: 70px;
+  align-items: center;
+}
+
+.cafe-hero h1 {
+  margin: 24px 0;
+  font-size: clamp(72px, 10vw, 170px);
+  line-height: .82;
+  letter-spacing: -.075em;
+}
+
+.cafe-hero h1 em {
+  color: transparent;
+  font-style: normal;
+  -webkit-text-stroke: 2px var(--cyan);
+}
+
+.cafe-hero p:not(.micro-label) {
+  max-width: 730px;
+  color: #c9c9c9;
+  font-size: 21px;
+  line-height: 1.55;
+}
+
+.cafe-hero__cup {
+  position: relative;
+  width: 330px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+}
+
+.cafe-hero__cup::before,
+.cafe-hero__cup span {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(0,239,255,.32);
+  border-radius: 50%;
+}
+
+.cafe-hero__cup::before { inset: 16%; }
+.cafe-hero__cup span { inset: -8%; animation: spin 16s linear infinite; }
+
+.cafe-hero__cup > i {
+  font-size: 100px;
+  color: var(--cyan);
+}
+
+.cafe-hero__cup p {
+  position: absolute;
+  bottom: 20px;
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 900;
+  letter-spacing: .15em;
+}
+
+.cafe-conversation {
+  padding: 110px 0 140px;
+}
+
+.cafe-shell {
+  max-width: 1080px;
+  margin: auto;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 30px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 35px 100px rgba(0,0,0,.1);
+}
+
+.cafe-shell__header {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 30px;
+  align-items: end;
+  border-bottom: 1px solid #ddd;
+}
+
+.cafe-shell__header h2 {
+  margin: 8px 0 0;
+  font-size: clamp(38px, 5vw, 70px);
+  line-height: .95;
+  letter-spacing: -.055em;
+}
+
+.cafe-progress {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cafe-progress > div {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #ddd;
+}
+
+.cafe-progress i {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg,var(--cyan),var(--violet));
+  transition: width .45s ease;
+}
+
+.cafe-chat {
+  min-height: 280px;
+  max-height: 520px;
+  overflow: auto;
+  padding: 34px;
+  display: grid;
+  gap: 18px;
+  background:
+    linear-gradient(rgba(0,0,0,.035) 1px, transparent 1px),
+    linear-gradient(90deg,rgba(0,0,0,.035) 1px, transparent 1px),
+    #f6f7f8;
+  background-size: 46px 46px;
+}
+
+.cafe-message {
+  display: flex;
+  gap: 13px;
+  max-width: 760px;
+  animation: cafe-in .45s cubic-bezier(.2,.8,.2,1);
+}
+
+.cafe-message--user {
+  justify-self: end;
+  flex-direction: row-reverse;
+}
+
+.cafe-message > div {
+  padding: 15px 18px;
+  border-radius: 4px 18px 18px 18px;
+  background: #050505;
+  color: #fff;
+}
+
+.cafe-message--user > div {
+  border-radius: 18px 4px 18px 18px;
+  background: linear-gradient(135deg,var(--cyan),var(--blue));
+  color: #050505;
+}
+
+.cafe-message small {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+.cafe-message p {
+  margin: 5px 0 0;
+  line-height: 1.5;
+}
+
+.cafe-avatar {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #050505;
+  color: var(--cyan);
+}
+
+.cafe-message--user .cafe-avatar {
+  background: var(--blue);
+  color: #fff;
+}
+
+.cafe-options {
+  padding: 25px 30px;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.cafe-options button {
+  min-height: 78px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  background: #fff;
+  color: #050505;
+  text-align: left;
+  transition: .25s;
+}
+
+.cafe-options button:hover {
+  border-color: var(--blue);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.cafe-options i {
+  font-size: 23px;
+  color: var(--blue);
+}
+
+.cafe-controls {
+  padding: 18px 30px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cafe-controls button,
+.cafe-secondary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: #555;
+  padding: 10px;
+}
+
+.cafe-controls button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.cafe-result {
+  max-width: 1180px;
+  margin: 60px auto 0;
+  padding: clamp(28px,5vw,70px);
+  border-radius: 30px;
+  background: linear-gradient(145deg,#050505,#071a31);
+  color: #fff;
+}
+
+.cafe-result__heading h2 {
+  margin: 14px 0 18px;
+  max-width: 980px;
+  font-size: clamp(46px,7vw,100px);
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+.cafe-result__heading > p:last-child {
+  max-width: 760px;
+  color: #c4c4c4;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.cafe-result__grid {
+  margin-top: 45px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+}
+
+.cafe-result__grid article {
+  min-height: 330px;
+  padding: 26px;
+  border: 1px solid #303030;
+  border-radius: 20px;
+  background: rgba(255,255,255,.04);
+}
+
+.cafe-result__grid article > i {
+  color: var(--cyan);
+  font-size: 33px;
+}
+
+.cafe-result__grid small {
+  display: block;
+  margin-top: 50px;
+  color: #999;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+.cafe-result__grid h3 {
+  margin: 10px 0;
+  font-size: 27px;
+}
+
+.cafe-result__grid p,
+.cafe-result__grid li {
+  color: #c2c2c2;
+  line-height: 1.5;
+}
+
+.cafe-result__grid ul {
+  padding-left: 18px;
+}
+
+.cafe-result__actions {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cafe-result__actions .cafe-secondary-action {
+  color: #fff;
+  border: 1px solid #3d3d3d;
+  border-radius: 999px;
+  padding: 12px 15px;
+}
+
+.cafe-result__note {
+  margin: 28px 0 0;
+  color: #888;
+  font-size: 13px;
+}
+
+@keyframes cafe-in {
+  from { opacity:0; transform:translateY(10px) scale(.98); }
+  to { opacity:1; transform:none; }
+}
+
+@media(max-width:900px){
+  .cafe-hero__layout,
+  .cafe-shell__header,
+  .cafe-result__grid {
+    grid-template-columns:1fr;
+  }
+  .cafe-hero__cup { display:none; }
+}
+
+@media(max-width:680px){
+  .cafe-hero { padding:140px 0 90px; min-height:auto; }
+  .cafe-options { grid-template-columns:1fr; padding:18px; }
+  .cafe-chat { padding:20px 16px; }
+  .cafe-shell__header { padding:22px 18px; }
+  .cafe-controls { padding:14px 18px 20px; }
+}
+
+
+/* =========================================================
+   FIX DEFINITIVO HERO CAFÉ MOBILE
+   ========================================================= */
+
+@media (max-width: 780px) {
+  .cafe-hero {
+    min-height: auto;
+    padding: 120px 0 78px;
+  }
+
+  .cafe-hero__layout {
+    display: block;
+  }
+
+  .cafe-hero h1 {
+    width: 100%;
+    max-width: 100%;
+    margin: 22px 0 24px;
+    font-size: clamp(42px, 10.8vw, 60px);
+    line-height: .9;
+    letter-spacing: -.025em;
+    overflow: visible;
+  }
+
+  .cafe-hero h1 br {
+    display: none;
+  }
+
+  .cafe-hero h1 em {
+    display: block;
+    width: 100%;
+    font-size: .78em;
+    line-height: 1;
+    letter-spacing: -.015em;
+    -webkit-text-stroke: 1.2px var(--cyan);
+  }
+
+  .cafe-hero p:not(.micro-label) {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .cafe-hero .pill-button {
+    margin-top: 22px;
+  }
+
+  .cafe-shell__header h2 {
+    font-size: clamp(32px, 8.8vw, 46px);
+    line-height: .98;
+    letter-spacing: -.02em;
+  }
+}
+
+@media (max-width: 390px) {
+  .cafe-hero h1 {
+    font-size: clamp(39px, 10vw, 52px);
+  }
+
+  .cafe-hero h1 em {
+    font-size: .74em;
+  }
+}

@@ -1712,3 +1712,22 @@ body.pg-welcome-open {
     animation: none !important;
   }
 }
+
+
+/* FIX RÁPIDO — modal de bienvenida del Playground */
+.pg-human-welcome__backdrop {
+  backdrop-filter: blur(7px);
+  transition: opacity .28s ease;
+}
+
+.pg-human-welcome__panel {
+  transform: translateY(18px) scale(.985);
+  transition:
+    opacity .28s ease,
+    transform .34s cubic-bezier(.22,.8,.22,1);
+  will-change: opacity, transform;
+}
+
+.pg-human-welcome.pg-is-open .pg-human-welcome__panel {
+  transform: translateY(0) scale(1);
+}

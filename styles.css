@@ -2288,3 +2288,1181 @@ button {
     font-size: 18px;
   }
 }
+
+
+/* =========================================================
+   27. V5 — CONVERSIÓN, CONFIANZA Y CONTACTO HUMANO
+   ========================================================= */
+
+/* Intro breve de primera visita por sesión */
+.site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  place-items: center;
+  background: #050505;
+  color: #fff;
+  transition: opacity .45s ease, visibility .45s;
+}
+
+.site-intro.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-intro__mark {
+  position: relative;
+  width: 180px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+}
+
+.site-intro__mark span {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--cyan);
+  border-radius: 50%;
+  animation: intro-meet .7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.site-intro__mark span:first-child {
+  transform: translateX(-55px);
+}
+
+.site-intro__mark span:nth-child(2) {
+  transform: translateX(55px);
+  border-color: var(--violet);
+}
+
+.site-intro__mark strong {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  letter-spacing: .18em;
+  animation: intro-word .4s .38s forwards;
+}
+
+@keyframes intro-meet {
+  to { transform: translateX(0) scale(.85); }
+}
+
+@keyframes intro-word {
+  to { opacity: 1; }
+}
+
+/* Café teaser */
+.coffee-teaser {
+  padding: 130px 0;
+  overflow: hidden;
+}
+
+.coffee-teaser__grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 430px;
+  gap: 70px;
+  align-items: center;
+}
+
+.coffee-teaser h2 {
+  margin: 18px 0;
+  font-size: clamp(54px,7vw,108px);
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+.coffee-teaser h2 em {
+  color: var(--cyan);
+  font-style: normal;
+}
+
+.coffee-teaser__copy > p:not(.section-index) {
+  max-width: 720px;
+  color: #c8c8c8;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.coffee-teaser__actions {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.coffee-teaser__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.coffee-teaser__visual {
+  position: relative;
+  min-height: 480px;
+  display: grid;
+  place-items: center;
+}
+
+.coffee-cup {
+  position: relative;
+  z-index: 2;
+  width: 190px;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg,var(--cyan),var(--blue),var(--violet));
+  color: #050505;
+  font-size: 78px;
+}
+
+.coffee-orbit {
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  animation: spin 18s linear infinite;
+}
+
+.coffee-orbit--one { width: 380px; height: 380px; }
+.coffee-orbit--two { width: 290px; height: 290px; animation-direction:reverse; }
+
+.coffee-teaser__visual > p {
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  color: #aaa;
+  font-size: 11px;
+  line-height: 1.9;
+  letter-spacing: .12em;
+}
+
+.coffee-teaser__visual > p strong {
+  color: var(--cyan);
+}
+
+/* FAQ */
+.faq {
+  padding: 130px 0;
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 420px minmax(0,1fr);
+  gap: 80px;
+}
+
+.faq-copy h2 {
+  margin: 18px 0;
+  font-size: clamp(48px,6vw,88px);
+  line-height: .94;
+  letter-spacing: -.055em;
+}
+
+.faq-copy h2 em {
+  color: var(--blue);
+  font-style: normal;
+}
+
+.faq-copy > p:last-child {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.faq-list {
+  border-top: 1px solid #bbb;
+}
+
+.faq-list article {
+  border-bottom: 1px solid #bbb;
+}
+
+.faq-list button {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  border: 0;
+  background: transparent;
+  color: #050505;
+  text-align: left;
+  font-size: clamp(20px,2.3vw,31px);
+  font-weight: 800;
+}
+
+.faq-list button i {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #050505;
+  color: #fff;
+  transition: transform .3s, background .3s;
+}
+
+.faq-list article.open button i {
+  transform: rotate(45deg);
+  background: var(--blue);
+}
+
+.faq-list article > div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s ease, padding .45s ease;
+}
+
+.faq-list article.open > div {
+  max-height: 260px;
+  padding: 0 70px 24px 0;
+}
+
+.faq-list article > div p {
+  margin: 0;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+/* Contacto conversacional */
+.contact-human-note {
+  margin-top: 28px;
+  max-width: 560px;
+  padding: 18px;
+  display: flex;
+  gap: 13px;
+  border: 1px solid #bbb;
+  border-radius: 16px;
+  background: rgba(255,255,255,.5);
+}
+
+.contact-human-note > i {
+  color: var(--blue);
+  font-size: 25px;
+}
+
+.contact-human-note p {
+  margin: 0;
+  font-size: 15px !important;
+  line-height: 1.5;
+}
+
+.contact-methods {
+  margin: 5px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-methods legend {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.contact-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.contact-methods label {
+  display: block;
+}
+
+.contact-methods input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-methods span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #aaa;
+  border-radius: 999px;
+  padding: 11px 14px;
+  cursor: pointer;
+}
+
+.contact-methods input:checked + span {
+  border-color: #050505;
+  background: #050505;
+  color: #fff;
+}
+
+.contact-phone[hidden] {
+  display: none;
+}
+
+/* Casos de estudio dentro del modal */
+.case-study-flow {
+  margin: 35px 0;
+  display: grid;
+  gap: 12px;
+}
+
+.case-study-flow article {
+  padding: 22px;
+  border: 1px solid #ccc;
+  border-radius: 17px;
+}
+
+.case-study-flow small {
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+.case-study-flow h3 {
+  margin: 8px 0;
+  font-size: 25px;
+}
+
+.case-study-flow p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Testimonios: permanece oculto si no hay citas reales */
+.testimonials {
+  padding: 120px 0;
+}
+
+.testimonial-track {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+}
+
+.testimonial-track blockquote {
+  margin: 0;
+  padding: clamp(28px,4vw,55px);
+  border: 1px solid #333;
+  border-radius: 24px;
+}
+
+.testimonial-track blockquote p {
+  margin: 0 0 35px;
+  font-size: clamp(27px,3.5vw,47px);
+  line-height: 1.15;
+}
+
+.testimonial-track footer {
+  display: grid;
+  gap: 4px;
+  color: #aaa;
+}
+
+@media(max-width:1000px){
+  .coffee-teaser__grid,
+  .faq-layout {
+    grid-template-columns:1fr;
+  }
+  .coffee-teaser__visual { min-height:400px; }
+}
+
+@media(max-width:780px){
+  .coffee-teaser,
+  .faq { padding:85px 0; }
+  .coffee-teaser__visual { min-height:340px; }
+  .coffee-orbit--one { width:300px;height:300px; }
+  .coffee-orbit--two { width:225px;height:225px; }
+  .coffee-cup { width:150px;height:150px;font-size:60px; }
+  .faq-list article.open > div { padding-right:0; }
+  .contact-methods { flex-direction:column;align-items:flex-start; }
+  .testimonial-track { grid-template-columns:1fr; }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .site-intro { display:none; }
+}
+
+.error-page {
+  position:relative;
+  min-height:100vh;
+  display:grid;
+  align-items:center;
+  overflow:hidden;
+}
+.error-page__content { position:relative;z-index:2;padding:120px 0; }
+.error-page h1 {
+  margin:24px 0;
+  max-width:1200px;
+  font-size:clamp(65px,10vw,160px);
+  line-height:.84;
+  letter-spacing:-.07em;
+}
+.error-page h1 em { color:var(--cyan);font-style:normal; }
+.error-page__content > p:not(.micro-label) {
+  max-width:650px;color:#bbb;font-size:20px;line-height:1.5;
+}
+.error-page__content > div {
+  margin-top:35px;display:flex;align-items:center;flex-wrap:wrap;gap:25px;
+}
+.error-page__orbit span {
+  position:absolute;right:-12vw;top:5vh;width:55vw;height:55vw;
+  border:1px solid rgba(0,239,255,.25);border-radius:50%;
+}
+.error-page__orbit span:last-child {
+  right:2vw;top:19vh;width:28vw;height:28vw;border-color:rgba(71,84,230,.45);
+}
+
+
+/* =========================================================
+   ATRY — PARCHE EUROSTYLE
+   La carpeta debe estar en: assets/eurostyle/
+   ========================================================= */
+
+@font-face {
+  font-family: "Eurostile";
+  src: url("assets/eurostyle/Eurostile-LT-Std-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eurostile";
+  src: url("assets/eurostyle/Eurostile-LT-Std-Demi.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eurostile";
+  src: url("assets/eurostyle/Eurostile-LT-Std-Demi-Oblique.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eurostile Extended";
+  src: url("assets/eurostyle/Eurostile-Extended-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eurostile Extended";
+  src: url("assets/eurostyle/Eurostile-LT-Std-Bold-Extended-2.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Texto general */
+body,
+input,
+select,
+textarea {
+  font-family: "Eurostile", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+/* Títulos principales */
+h1,
+h2,
+.hero-title,
+.page-hero h1,
+.pg-hero h1,
+.cafe-hero h1,
+.statement-text,
+.idea-result h3,
+.modal-panel h2 {
+  font-family: "Eurostile Extended", Arial, Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+/* Navegación, botones y etiquetas */
+.desktop-nav,
+.mobile-menu,
+button,
+.pill-button,
+.micro-label,
+.section-index,
+.project-filters,
+.device-switcher,
+.project-picker {
+  font-family: "Eurostile Extended", Arial, Helvetica, sans-serif;
+}
+
+/* Subtítulos y bloques de peso medio */
+h3,
+h4,
+strong,
+.project-info h3,
+.service-card h3,
+.capability-row h2 {
+  font-family: "Eurostile", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+/* Cursivas destacadas */
+h1 em,
+h2 em,
+.statement-text em,
+.page-hero em,
+.pg-hero em,
+.cafe-hero em {
+  font-family: "Eurostile", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Ajuste para que Extended no quede demasiado apretada */
+h1,
+h2,
+.hero-title,
+.page-hero h1,
+.pg-hero h1,
+.cafe-hero h1 {
+  letter-spacing: -0.045em;
+}
+
+/* =========================================================
+   ATRY — AJUSTE FINO EUROSTILE
+   Corrige tamaños, saltos y jerarquías después del cambio
+   tipográfico sin alterar la estructura de la web.
+   ========================================================= */
+
+/* Texto general: Eurostile necesita un poco más de aire */
+body {
+  line-height: 1.45;
+}
+
+p,
+li,
+input,
+select,
+textarea {
+  letter-spacing: 0;
+}
+
+/* Navegación y botones */
+.desktop-nav {
+  gap: 26px;
+  font-size: 13px;
+  letter-spacing: .015em;
+}
+
+.desktop-nav a,
+.mobile-menu a,
+.pill-button,
+.project-filters button,
+.device-switcher button,
+.project-picker button {
+  letter-spacing: .01em;
+}
+
+.pill-button {
+  min-width: 248px;
+  font-size: 14px;
+}
+
+.micro-label,
+.section-index {
+  font-size: 11px;
+  letter-spacing: .13em;
+}
+
+/* Hero principal */
+.hero-title.hero-title--v1 {
+  font-size: clamp(64px, 6.7vw, 134px);
+  line-height: .86;
+  letter-spacing: -.052em;
+}
+
+.hero-lead {
+  max-width: 720px;
+  font-size: clamp(17px, 1.35vw, 22px);
+  line-height: 1.5;
+}
+
+/* Grandes títulos de sección */
+.statement-text {
+  font-size: clamp(38px, 5.2vw, 86px);
+  line-height: 1.02;
+  letter-spacing: -.038em;
+}
+
+.section-head h2,
+.live-copy h2,
+.lab-copy h2,
+.contact-copy h2,
+.service-cta h2,
+.coffee-teaser h2,
+.faq-copy h2 {
+  font-size: clamp(44px, 5.1vw, 82px);
+  line-height: .99;
+  letter-spacing: -.036em;
+}
+
+/* Héroes internos */
+.page-hero h1 {
+  font-size: clamp(56px, 7.6vw, 126px);
+  line-height: .91;
+  letter-spacing: -.045em;
+}
+
+.page-hero > div > p:last-child {
+  max-width: 860px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Playground y Café */
+.pg-hero h1,
+.cafe-hero h1,
+.error-page h1 {
+  line-height: .9;
+  letter-spacing: -.045em;
+}
+
+.cafe-hero h1 {
+  font-size: clamp(66px, 8.7vw, 145px);
+}
+
+.pg-personal-entry h2,
+.pg-section-head h2,
+.pg-outro h2 {
+  letter-spacing: -.035em;
+  line-height: .98;
+}
+
+/* Títulos medianos */
+.service-card h3 {
+  font-size: clamp(28px, 3.35vw, 48px);
+  line-height: 1.02;
+}
+
+.project-info h3 {
+  font-size: 27px;
+  line-height: 1.08;
+}
+
+.capability-row h2 {
+  font-size: clamp(36px, 4.3vw, 56px);
+  line-height: 1;
+}
+
+.story-grid h2 {
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -.032em;
+}
+
+.idea-result h3 {
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.modal-panel h2 {
+  font-size: clamp(42px, 5vw, 60px);
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+/* Bloques de lectura */
+.statement-points p,
+.side-copy,
+.live-copy p:not(.section-index),
+.service-details p,
+.capability-row p,
+.story-grid p,
+.contact-copy > p,
+.faq-copy > p:last-child,
+.coffee-teaser__copy > p:not(.section-index) {
+  line-height: 1.58;
+}
+
+/* Evita cortes raros en palabras largas */
+h1,
+h2,
+h3,
+.hero-title,
+.statement-text,
+.page-hero h1,
+.pg-hero h1,
+.cafe-hero h1 {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* Botones y formularios */
+.contact-form label,
+.idea-builder label {
+  font-size: 12px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.idea-builder select {
+  font-size: 16px;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .hero-title.hero-title--v1 {
+    font-size: clamp(58px, 10vw, 104px);
+    line-height: .88;
+  }
+
+  .section-head h2,
+  .live-copy h2,
+  .lab-copy h2,
+  .contact-copy h2,
+  .service-cta h2,
+  .coffee-teaser h2,
+  .faq-copy h2 {
+    font-size: clamp(42px, 7vw, 72px);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(54px, 9vw, 104px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 780px) {
+  .mobile-menu {
+    font-size: clamp(32px, 9.5vw, 50px);
+    line-height: 1;
+    letter-spacing: -.025em;
+  }
+
+  .hero-title.hero-title--v1 {
+    font-size: clamp(43px, 13.3vw, 68px);
+    line-height: .91;
+    letter-spacing: -.038em;
+  }
+
+  .hero-title--v1 .hero-line--split {
+    gap: 0;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+    line-height: 1.52;
+  }
+
+  .statement-text {
+    font-size: clamp(34px, 10vw, 54px);
+    line-height: 1.04;
+    letter-spacing: -.03em;
+  }
+
+  .section-head h2,
+  .live-copy h2,
+  .lab-copy h2,
+  .contact-copy h2,
+  .service-cta h2,
+  .coffee-teaser h2,
+  .faq-copy h2 {
+    font-size: clamp(38px, 11vw, 58px);
+    line-height: 1.02;
+  }
+
+  .page-hero h1,
+  .pg-hero h1,
+  .cafe-hero h1,
+  .error-page h1 {
+    font-size: clamp(48px, 14vw, 76px);
+    line-height: .94;
+    letter-spacing: -.035em;
+  }
+
+  .service-card h3 {
+    font-size: clamp(25px, 7.4vw, 37px);
+  }
+
+  .project-info h3 {
+    font-size: 25px;
+  }
+
+  .pill-button {
+    min-width: min(100%, 240px);
+    font-size: 13px;
+  }
+
+  .micro-label,
+  .section-index {
+    font-size: 10px;
+    letter-spacing: .115em;
+  }
+}
+
+/* Celulares muy angostos */
+@media (max-width: 390px) {
+  .hero-title.hero-title--v1 {
+    font-size: clamp(40px, 12.6vw, 56px);
+  }
+
+  .page-hero h1,
+  .pg-hero h1,
+  .cafe-hero h1,
+  .error-page h1 {
+    font-size: clamp(43px, 13vw, 62px);
+  }
+
+  .mobile-menu {
+    font-size: clamp(29px, 8.8vw, 43px);
+  }
+}
+
+
+/* =========================================================
+   ATRY — AJUSTE HERO + MENÚ MÓVIL EUROSTILE
+   Pegar al final de styles.css
+   ========================================================= */
+
+
+/* =========================================================
+   HERO ESCRITORIO
+   Reduce un poco el título y le devuelve espacio a la órbita
+   ========================================================= */
+
+.hero-layout {
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 34px;
+}
+
+.hero-title.hero-title--v1 {
+  width: 100%;
+  max-width: 1120px;
+
+  font-size: clamp(62px, 6.15vw, 122px);
+  line-height: .87;
+  letter-spacing: -.045em;
+}
+
+.hero-title--v1 .hero-line--split {
+  gap: .1em;
+}
+
+.hero-orbit {
+  width: 350px;
+}
+
+.hero-lead {
+  max-width: 650px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title.hero-title--v1 {
+    max-width: 900px;
+    font-size: clamp(56px, 9.3vw, 96px);
+    line-height: .89;
+  }
+}
+
+
+/* =========================================================
+   HERO CELULAR
+   Hace que STRATEGY entre completa y ordena los espacios
+   ========================================================= */
+
+@media (max-width: 780px) {
+  .hero {
+    min-height: auto;
+    padding: 112px 0 74px;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-title.hero-title--v1 {
+    width: 100%;
+    max-width: none;
+    margin: 26px 0 24px;
+
+    font-size: clamp(40px, 10.8vw, 58px);
+    line-height: .92;
+    letter-spacing: -.035em;
+  }
+
+  .hero-title--v1 .hero-line {
+    width: 100%;
+  }
+
+  .hero-title--v1 .hero-line > span {
+    max-width: 100%;
+  }
+
+  .hero-title--v1 .hero-line--split {
+    display: block;
+  }
+
+  .hero-title--v1 .hero-outline {
+    -webkit-text-stroke: 1.2px var(--cyan);
+  }
+
+  .hero-lead {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.48;
+  }
+
+  .hero-actions {
+    gap: 22px;
+    margin-top: 30px;
+  }
+
+  .pill-button {
+    min-width: 220px;
+  }
+}
+
+
+/* =========================================================
+   CELULARES MUY ANGOSTOS
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .hero-title.hero-title--v1 {
+    font-size: clamp(37px, 10.2vw, 48px);
+    letter-spacing: -.025em;
+  }
+}
+
+
+/* =========================================================
+   MENÚ MÓVIL
+   Más editorial, ordenado y menos pesado
+   ========================================================= */
+
+@media (max-width: 780px) {
+  .mobile-menu {
+    place-content: center;
+    justify-items: stretch;
+
+    padding: 100px 34px 60px;
+    gap: 0;
+
+    text-align: left;
+    font-size: clamp(25px, 7vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -.02em;
+  }
+
+  .mobile-menu a {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 15px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .32);
+    text-shadow: none;
+  }
+
+  /* Quita el subrayado anterior */
+  .mobile-menu a::after {
+    content: "↗";
+    position: static;
+
+    width: auto;
+    height: auto;
+
+    background: none;
+    transform: none;
+
+    color: rgba(255, 255, 255, .75);
+    font-family: Arial, sans-serif;
+    font-size: .55em;
+  }
+
+  .mobile-menu a:hover::after,
+  .mobile-menu a:focus-visible::after {
+    transform: translate(4px, -4px);
+  }
+
+  /* El enlace largo puede ocupar dos líneas sin quedar gigante */
+  .mobile-menu a:nth-child(5) {
+    max-width: 520px;
+  }
+
+  .mobile-menu a:nth-child(5)::first-line {
+    line-height: 1;
+  }
+
+  /* Contacto destacado */
+  .mobile-menu a:last-child {
+    margin-top: 18px;
+    padding: 17px 20px;
+
+    border: 1px solid rgba(255, 255, 255, .7);
+    border-radius: 999px;
+  }
+
+  .mobile-menu a:last-child::after {
+    content: "+";
+    font-size: .8em;
+  }
+}
+
+
+/* =========================================================
+   MENÚ EN CELULARES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .mobile-menu {
+    padding-inline: 26px;
+    font-size: clamp(23px, 6.7vw, 31px);
+  }
+
+  .mobile-menu a {
+    padding: 13px 0;
+  }
+
+  .mobile-menu a:last-child {
+    padding: 15px 18px;
+  }
+}
+
+/* =========================================================
+   FIX HERO PRINCIPAL + MENÚ MÓVIL
+   ========================================================= */
+
+/* HERO ESCRITORIO */
+.hero-copy {
+  overflow: visible;
+}
+
+.hero-title.hero-title--v1 {
+  width: min(1120px, calc(100vw - 430px));
+  max-width: none;
+  font-size: clamp(58px, 5.45vw, 108px);
+  line-height: .89;
+  letter-spacing: -.038em;
+}
+
+.hero-title--v1 .hero-line--split {
+  width: max-content;
+  max-width: none;
+  overflow: visible;
+  gap: .08em;
+}
+
+.hero-title--v1 .hero-line--split > span {
+  flex-shrink: 0;
+}
+
+/* MENÚ MÓVIL */
+@media (max-width: 780px) {
+  .mobile-menu {
+    place-content: center;
+    justify-items: center;
+    padding: 95px 24px 55px;
+    gap: 10px;
+    text-align: center;
+    font-size: clamp(21px, 5.8vw, 28px);
+    line-height: 1;
+    letter-spacing: -.012em;
+  }
+
+  .mobile-menu a {
+    width: auto;
+    max-width: calc(100vw - 48px);
+    margin: 0 auto;
+    padding: 14px 8px;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,.24);
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .mobile-menu a::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .mobile-menu a:nth-child(5) {
+    font-size: clamp(17px, 4.6vw, 22px);
+    white-space: nowrap;
+  }
+
+  .mobile-menu a:last-child {
+    width: min(300px, 88vw);
+    margin-top: 18px;
+    padding: 15px 22px;
+    border: 1px solid rgba(255,255,255,.72);
+    border-radius: 999px;
+  }
+
+  /* HERO PRINCIPAL MOBILE */
+  .hero-title.hero-title--v1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(37px, 9.8vw, 52px);
+    line-height: .94;
+    letter-spacing: -.025em;
+  }
+
+  .hero-title--v1 .hero-line,
+  .hero-title--v1 .hero-line--split {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-title--v1 .hero-line--split {
+    display: block;
+  }
+
+  .hero-title--v1 .hero-line--split > span {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .mobile-menu {
+    font-size: 20px;
+    gap: 7px;
+  }
+
+  .mobile-menu a {
+    padding-block: 12px;
+  }
+
+  .mobile-menu a:nth-child(5) {
+    font-size: 16px;
+  }
+
+  .hero-title.hero-title--v1 {
+    font-size: clamp(34px, 9.2vw, 45px);
+  }
+}
+
