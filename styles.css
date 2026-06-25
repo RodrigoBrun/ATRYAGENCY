@@ -3466,3 +3466,64 @@ h3,
   }
 }
 
+/* =========================================================
+   FIX ESTUDIO — HERO MOBILE
+   Evita que el título se corte
+   ========================================================= */
+
+@media (max-width: 780px) {
+  .studio-hero {
+    min-height: auto;
+    padding: 135px 0 90px;
+    overflow: hidden;
+  }
+
+  .studio-hero .container {
+    min-width: 0;
+  }
+
+  .studio-hero h1 {
+    width: 100%;
+    max-width: 100%;
+    margin: 24px 0;
+
+    font-size: clamp(42px, 10.7vw, 60px);
+    line-height: .94;
+    letter-spacing: -.025em;
+
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .studio-hero h1 br {
+    display: none;
+  }
+
+  .studio-hero h1 em {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+
+    font-size: .82em;
+    line-height: 1.02;
+    letter-spacing: -.015em;
+  }
+
+  .studio-hero > .container > p:last-child {
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 390px) {
+  .studio-hero h1 {
+    font-size: clamp(39px, 10vw, 52px);
+  }
+
+  .studio-hero h1 em {
+    font-size: .78em;
+  }
+}
+
