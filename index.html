@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ATRY Agency crea marcas, sitios web y productos digitales donde creatividad, estrategia y tecnología se encuentran.">
+  <meta name="theme-color" content="#050505">
+  <title>ATRY Agency — Creativity meets digital strategy</title>
+  <link rel="icon" href="assets/FAVICON-DEGRADE.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<header class="site-header" data-header>
+  <a class="brand" href="index.html" aria-label="ATRY Agency, inicio"><img src="assets/IMAGOTIPO-BLANCO.png" alt="ATRY Agency"></a>
+  <nav class="desktop-nav" aria-label="Navegación principal">
+    <a href="#trabajos">Proyectos</a><a href="#servicios">Servicios</a><a href="#estudio">Estudio</a><a href="playground.html">Playground</a>
+  </nav>
+  <a class="pill-button pill-button--light" href="#contacto"><span>Contanos tu idea</span><b aria-hidden="true">+</b></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span></span><span></span></button>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-hidden="true"><a href="#trabajos">Proyectos</a><a href="#servicios">Servicios</a><a href="#estudio">Estudio</a><a href="playground.html">Playground</a><a href="#contacto">Contacto</a></nav>
+<main id="contenido">
+<section class="hero dark-section">
+  <div class="hero-grid" aria-hidden="true"></div><div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-shape hero-shape--one" aria-hidden="true"></div><div class="hero-shape hero-shape--two" aria-hidden="true"></div>
+  <div class="container hero-layout">
+    <div class="hero-copy">
+      <p class="micro-label reveal">Creative digital agency · Uruguay</p>
+      <h1 class="hero-title"><span class="hero-line"><span>CREATIVITY</span></span><span class="hero-line"><span>MEETS DIGITAL</span></span><span class="hero-line accent"><span>STRATEGY.</span></span></h1>
+      <p class="hero-lead reveal">Diseñamos marcas, páginas web y experiencias digitales que ayudan a negocios y emprendedores a verse mejor, conectar y crecer.</p>
+      <div class="hero-actions reveal"><a class="pill-button pill-button--accent" href="#trabajos"><span>Ver proyectos</span><b>↓</b></a><a class="text-link" href="#contacto">Empezar un proyecto <span>→</span></a></div>
+    </div>
+    <div class="hero-orbit" aria-hidden="true"><img src="assets/LOGOTIPO-BLANCO.png" alt=""><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><span class="orbit orbit-c"></span><span class="orbit-label orbit-label-a">BRAND</span><span class="orbit-label orbit-label-b">WEB</span><span class="orbit-label orbit-label-c">GROW</span></div>
+  </div>
+  <div class="ticker"><div><span>BRANDING</span><i>✦</i><span>WEB DESIGN</span><i>✦</i><span>STRATEGY</span><i>✦</i><span>DIGITAL PRODUCTS</span><i>✦</i><span>BRANDING</span><i>✦</i><span>WEB DESIGN</span><i>✦</i><span>STRATEGY</span><i>✦</i></div></div>
+</section>
+
+<section class="statement light-section" id="estudio">
+  <div class="container statement-grid">
+    <p class="section-index reveal">01 / WHAT WE BELIEVE</p>
+    <div>
+      <p class="statement-text reveal">Una marca no necesita más ruido. Necesita una <em>idea clara</em>, una experiencia que se recuerde y una estrategia que la haga avanzar.</p>
+      <div class="statement-points reveal"><p>ATRY une creatividad, estrategia y tecnología para construir identidades digitales sólidas, coherentes y preparadas para crecer.</p><a class="chip-link" href="estudio.html">Conocer el estudio <span>→</span></a></div>
+    </div>
+  </div>
+  <div class="kinetic-word" aria-hidden="true">BUILD · CONNECT · GROW</div>
+</section>
+
+<section class="work light-section" id="trabajos">
+  <div class="container">
+    <div class="section-head reveal"><div><p class="section-index">02 / SELECTED WORK</p><h2>Experiencias que<br><em>se pueden tocar.</em></h2></div><a class="pill-button pill-button--dark" href="proyectos.html"><span>Ver todos</span><b>↗</b></a></div>
+    <div class="project-filters" role="tablist" aria-label="Filtrar proyectos"><button class="active" data-filter="all">Todos</button><button data-filter="web">Web</button><button data-filter="ecommerce">E-commerce</button><button data-filter="product">Producto digital</button></div>
+    <div class="project-grid" id="project-grid"></div>
+  </div>
+</section>
+
+<section class="live-preview dark-section" id="preview">
+  <div class="container live-layout">
+    <div class="live-copy reveal"><p class="section-index">03 / LIVE PREVIEW</p><h2>No te contamos cómo funciona.<br><em>Te dejamos probarlo.</em></h2><p>Elegí un proyecto y cambialo entre escritorio, tablet y móvil. Una pequeña muestra de cómo pensamos experiencias reales.</p>
+      <div class="project-picker" id="project-picker" role="listbox" aria-label="Seleccionar proyecto"></div>
+      <div class="device-switcher" aria-label="Cambiar dispositivo"><button class="active" data-device="desktop">Desktop</button><button data-device="tablet">Tablet</button><button data-device="mobile">Mobile</button></div>
+    </div>
+    <div class="live-frame desktop reveal" id="live-frame">
+      <div class="browser-top"><span class="browser-dots"><i></i><i></i><i></i></span><span id="live-url">selected-work</span><a id="live-open" href="#" target="_blank" rel="noopener noreferrer">Abrir sitio</a></div>
+      <div class="live-screen"><div class="loading-state" id="loading-state"><span></span><p>Cargando experiencia…</p></div><iframe id="live-iframe" title="Vista previa del proyecto" loading="lazy"></iframe><div class="preview-fallback" id="preview-fallback"><img src="assets/IMAGOTIPO-BLANCO.png" alt="ATRY Agency"><p>Esta web prefiere abrirse en una pestaña nueva.</p><a id="fallback-link" class="pill-button pill-button--accent" href="#" target="_blank" rel="noopener noreferrer"><span>Visitar proyecto</span><b>↗</b></a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services light-section" id="servicios">
+  <div class="container">
+    <div class="section-head reveal"><div><p class="section-index">04 / WHAT WE DO</p><h2>De la primera idea<br><em>al próximo nivel.</em></h2></div><p class="side-copy">No vendemos “cosas lindas”. Diseñamos sistemas que ayudan a una marca a comunicar, vender y crecer.</p></div>
+    <div class="service-deck" id="service-deck"></div>
+    <a class="chip-link centered" href="servicios.html">Explorar todos los servicios <span>→</span></a>
+  </div>
+</section>
+
+<section class="idea-lab dark-section">
+  <div class="container lab-layout">
+    <div class="lab-copy reveal"><p class="section-index">05 / IDEA LAB</p><h2>Probemos una idea<br><em>en 30 segundos.</em></h2><p>Elegí qué querés lograr y te mostramos una dirección posible. No reemplaza una estrategia; apenas prende la chispa.</p></div>
+    <form class="idea-builder reveal" id="idea-builder">
+      <label>Mi negocio necesita<select id="goal-select"><option value="vender">vender más</option><option value="posicionar">verse más profesional</option><option value="reservas">recibir reservas o turnos</option><option value="lanzar">lanzar una idea nueva</option></select></label>
+      <label>La energía de la marca debería sentirse<select id="vibe-select"><option value="audaz">audaz y contemporánea</option><option value="premium">premium y refinada</option><option value="cercana">cercana y humana</option><option value="experimental">experimental y sorprendente</option></select></label>
+      <button class="pill-button pill-button--accent" type="submit"><span>Generar dirección</span><b>+</b></button>
+    </form>
+    <article class="idea-result reveal" id="idea-result"><span>ATRY / CONCEPT 001</span><h3>Una presencia digital que convierte claridad en confianza.</h3><p>Branding estratégico + sitio web modular + una experiencia de contacto simple y memorable.</p><div><b>IDENTITY</b><b>WEB</b><b>GROWTH</b></div></article>
+  </div>
+</section>
+
+<section class="process light-section">
+  <div class="container"><div class="section-head reveal"><div><p class="section-index">06 / HOW WE WORK</p><h2>Menos vueltas.<br><em>Más dirección.</em></h2></div></div>
+    <div class="process-track"><div class="process-progress" aria-hidden="true"></div>
+      <article><span>01</span><h3>Descubrimos</h3><p>Entendemos la marca, su público y el desafío real.</p></article><article><span>02</span><h3>Definimos</h3><p>Convertimos ideas dispersas en una dirección estratégica.</p></article><article><span>03</span><h3>Diseñamos</h3><p>Creamos una identidad y una experiencia que se reconocen.</p></article><article><span>04</span><h3>Desarrollamos</h3><p>Transformamos el concepto en una solución rápida y adaptable.</p></article><article><span>05</span><h3>Lanzamos</h3><p>Probamos, publicamos y dejamos la marca lista para evolucionar.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="why dark-section"><div class="container why-grid"><p class="section-index">07 / WHY ATRY</p><div class="why-lines"><p><span>01</span>Estrategia antes que decoración.</p><p><span>02</span>Diseño pensado para objetivos reales.</p><p><span>03</span>Tecnología preparada para crecer.</p><p><span>04</span>Comunicación clara, cercana y sin humo.</p></div></div></section>
+
+<section class="contact light-section" id="contacto"><div class="container contact-grid"><div class="contact-copy reveal"><p class="section-index">08 / LET'S BUILD</p><h2>Tu próximo salto<br><em>puede empezar acá.</em></h2><p>Contanos qué estás construyendo. Nosotros te ayudamos a darle forma, dirección y una presencia digital a la altura.</p></div>
+<form class="contact-form reveal" id="contact-form"><label>Nombre<input required name="name" autocomplete="name" placeholder="Tu nombre"></label><label>Marca o empresa<input name="brand" placeholder="¿Cómo se llama?"></label><label>Email<input required type="email" name="email" autocomplete="email" placeholder="hola@tuempresa.com"></label><label>¿Qué necesitás?<select name="service"><option>Branding e identidad</option><option>Diseño y desarrollo web</option><option>E-commerce o reservas</option><option>Producto digital</option><option>Estrategia digital</option><option>Otro</option></select></label><label class="wide">Contanos un poco<textarea required name="message" rows="5" placeholder="Qué querés crear, mejorar o lanzar…"></textarea></label><input class="honeypot" tabindex="-1" autocomplete="off" name="website"><div class="wide form-bottom"><p id="form-status" aria-live="polite">El envío se conectará al canal que definamos.</p><button class="pill-button pill-button--dark" type="submit"><span>Enviar consulta</span><b>→</b></button></div></form></div></section>
+</main>
+<footer class="site-footer dark-section"><div class="container footer-top"><img src="assets/IMAGOTIPO-BLANCO.png" alt="ATRY Agency"><p>Creatividad, estrategia y tecnología en un mismo punto de encuentro.</p></div><div class="container footer-bottom"><span>© <span id="year"></span> ATRY Agency</span><nav><a href="proyectos.html">Proyectos</a><a href="servicios.html">Servicios</a><a href="playground.html">Playground</a></nav><a href="#inicio">Volver arriba ↑</a></div></footer>
+<div class="project-modal" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title"><div class="modal-backdrop" data-close-modal></div><div class="modal-panel"><button class="modal-close" type="button" data-close-modal aria-label="Cerrar proyecto">Cerrar ×</button><div id="modal-content"></div></div></div>
+</body></html>
