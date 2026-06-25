@@ -2131,3 +2131,160 @@ button {
     animation:none;
   }
 }
+
+/* =========================================================
+   26. SISTEMA GLOBAL DE ICONOS — PHOSPHOR
+   Iconografía funcional compartida por todas las páginas.
+   ========================================================= */
+
+.ph,
+.ph-bold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Iconos dentro del círculo final de los botones principales */
+.pill-button b .ph,
+.pill-button b .ph-bold {
+  font-size: 20px;
+}
+
+/* Flechas de enlaces de texto y enlaces subrayados */
+.text-link,
+.chip-link,
+.browser-top > a,
+.footer-bottom > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text-link span,
+.chip-link span,
+.footer-bottom > a span {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Mantiene la animación original de la flecha del hero */
+.text-link:hover span {
+  transform: translateX(8px);
+}
+
+/* Selector de dispositivos */
+.device-switcher button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.device-switcher button .ph {
+  font-size: 17px;
+}
+
+/* Selector dinámico de proyectos del preview */
+.project-picker button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-picker button .ph {
+  font-size: 17px;
+}
+
+/* Botón Ver caso de las tarjetas */
+.project-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.project-open .ph {
+  font-size: 17px;
+  transition: transform .22s ease;
+}
+
+.project-open:hover .ph {
+  transform: translate(2px, -2px);
+}
+
+/* Abrir sitio del navegador simulado */
+.browser-top > a {
+  justify-self: end;
+}
+
+.browser-top > a .ph {
+  font-size: 15px;
+}
+
+/* Acordeón de servicios */
+.service-card button {
+  display: grid;
+  place-items: center;
+}
+
+.service-card button .ph-bold {
+  font-size: 24px;
+}
+
+/*
+  La rotación ya se aplicaba al botón completo al abrir el acordeón.
+  El icono Phosphor mantiene exactamente ese comportamiento.
+*/
+
+/* Botón de cierre del modal */
+.modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.modal-close .ph {
+  font-size: 18px;
+}
+
+/* Iconos decorativos dentro del Playground */
+.pg-app .ph,
+.pg-app .ph-bold {
+  vertical-align: middle;
+}
+
+/* Pequeña mejora táctil y visual */
+.pill-button b,
+.project-open,
+.service-card button,
+.modal-close,
+.device-switcher button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ajustes responsive de iconos */
+@media (max-width: 780px) {
+  .device-switcher {
+    flex-wrap: wrap;
+  }
+
+  .device-switcher button {
+    min-height: 42px;
+  }
+
+  .project-open {
+    min-height: 44px;
+  }
+
+  .browser-top > a span {
+    display: none;
+  }
+
+  .browser-top > a .ph {
+    font-size: 18px;
+  }
+}
